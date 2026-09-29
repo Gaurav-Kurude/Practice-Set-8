@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greeting Card Generator</title>
+  </head>
+  <body>
+    <main>
+      <div>
+        <h1>Greeting Card Generator</h1>
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" placeholder="Name.." />
+        </div>
+
+        <div>
+            <label for="Occasion">Occasion</label>
+            <select id="Occasion">
+                <option value="birthday">Birthday</option>
+                <option value="anniversary">Anniversary</option>
+                <option value="new-year">New Year</option>
+            </select>
+        </div>
+
+        <button id="generateBtn">Generate Greeting</button>
+        <p id="result"></p>
+      </div>
+    </main>
+    <script>
+        const Name = document.getElementById("name");
+        const Occasion = document.getElementById("Occasion");
+        const GenerateBtn = document.getElementById("generateBtn");
+        const Result = document.getElementById("result");
+
+        GenerateBtn.addEventListener("click", function(){
+            const UserName = Name.value;
+            const UserOccasion = Occasion.value;
+            Result.innerText = `Happy ${UserOccasion} ${UserName}`
+        })
+    </script>
+  </body>
+</html>
